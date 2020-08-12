@@ -1,0 +1,7 @@
+{
+    "schema": "name,idNumber,phone,trainee,hospital,bsId,teacherName,teacherId",
+    "data":"/Users/simq/tool/data.csv",
+    "skip":1,
+    "api":"http://test.ntppc.org.cn/api/userManage/add",
+    "auth":"Bearer f1ccc24d-2f09-44fd-8378-1f5f7ff260ef"
+}
