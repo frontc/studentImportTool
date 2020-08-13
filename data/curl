@@ -1,1 +1,0 @@
-curl  -H 'Authorization: Bearer f1ccc24d-2f09-44fd-8378-1f5f7ff260ef' -H "Accept: application/json" -H "Content-type: application/json" --location --request POST 'http://test.ntppc.org.cn/api/userManage/add' --data-raw '{"phone":"12345678901","trainee":"1","name":"测试12","idNumber":"320621199511098621","teacherId":-1,"hospital":"测试","bsId":65,"teacherName":-1}'

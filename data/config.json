@@ -1,7 +1,15 @@
 {
-    "schema": "name,idNumber,phone,trainee,hospital,bsId,teacherName,teacherId",
+    "comment":{
+        "_schema":"存放数据的格式，这个必须与待导入的api吻合，格式为字段名|数据类型。数据类型包括：文本和数字两种",
+        "_data":"数据文件的路径，目前只支持csv（即逗号分割的文本）",
+        "_skip":"数据文件中需要需要忽略的行数，如表头列",
+        "_api":"数据导入的api，默认method应为post",
+        "_auth":"Header Authorization的值，带前缀",
+        "_comment":"目前只支持post application/json格式的api，如需要适配其他类型接口，请自行扩展"
+    },
+    "schema": "name|text,idNumber|text,phone|text,trainee|text,hospital|text,bsId|number,teacherName|number,teacherId|number",
     "data":"/Users/simq/tool/data.csv",
     "skip":1,
     "api":"http://test.ntppc.org.cn/api/userManage/add",
-    "auth":"Bearer f1ccc24d-2f09-44fd-8378-1f5f7ff260ef"
+    "auth":"xxx"
 }
