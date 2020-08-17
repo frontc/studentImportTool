@@ -25,18 +25,19 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // 读取配置文件
         // String configFileName = "/Users/simq/tool/config.json";
-        if (args.length != 0 || args.length != 2) {
-            System.out.println("命令行参数无法识别。请通过-help了解使用方法。");
-            return;
-        }
-        if (args.length == 2 && args[0].equals("-help")) {
-            System.out.println("Api接口数据导入工具。\n\t-config\t配置文件路径。\n\t-help\t查看帮助信息。");
-            return;
-        }
         String configFileName = "config.json";
         if (args.length == 2 && args[0].equals("-config")) {
             configFileName = args[1];
+        }else if (args.length == 1 && args[0].equals("-help")) {
+            System.out.println("Api接口数据导入工具。\n\t-config\t配置文件路径。\n\t-help\t查看帮助信息。");
+            return;
+        }else if (args.length != 0) {
+            System.out.println("命令行参数无法识别。请通过-help了解使用方法。");
+            return;
         }
+        
+
+
         Config config = getConfig(configFileName);
         // 读取数据文件并转为json
         Stream<String> dataStream = Files.lines(Paths.get(config.getData())).skip(config.getSkip());
